@@ -6,7 +6,9 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "build:watch": "tsc --watch",
     "test": "jest",
+    "test:watch": "jest --watch",
     "lint": "tslint -p tsconfig.json",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "prepare": "npm run build",
