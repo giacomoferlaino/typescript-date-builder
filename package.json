@@ -1,0 +1,30 @@
+{
+  "name": "date-builder",
+  "version": "1.0.0",
+  "description": "A simple module to make operations with Date(s) easier.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giacomoferlaino/typescript-date-builder.git"
+  },
+  "keywords": [
+    "date-builder",
+    "date",
+    "builder",
+    "date-manage",
+    "date",
+    "manager",
+    "date-math",
+    "date",
+    "math"
+  ],
+  "author": "Giacomo Ferlaino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/giacomoferlaino/typescript-date-builder/issues"
+  },
+  "homepage": "https://github.com/giacomoferlaino/typescript-date-builder#readme"
+}
