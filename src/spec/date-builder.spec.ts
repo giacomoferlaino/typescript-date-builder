@@ -31,7 +31,48 @@ describe('class: DateBuilder', () => {
     });
 
     it('should create a DateBuilder set to the current date', () => {
-      expect(dateBuilder.getDate()).toEqual(nowDateMock);
+      expect(dateBuilder.getDate().getTime()).toEqual(nowDateMock.getTime());
+    });
+
+    it('should ignore hours, minutes, seconds and milliseconds', () => {
+      const date: Date = new Date(
+        nowDateMock.getFullYear(),
+        nowDateMock.getMonth(),
+        nowDateMock.getDate(),
+        1,
+        1,
+        1
+      );
+      jest.spyOn(Date, 'now').mockReturnValue(date.getTime());
+      dateBuilder = DateBuilder.today();
+      expect(dateBuilder.getDate().getTime()).toEqual(nowDateMock.getTime());
+    });
+  });
+
+  describe('method: now', () => {
+    beforeEach(() => {
+      jest.spyOn(Date, 'now').mockReturnValue(nowDateMock.getTime());
+      dateBuilder = DateBuilder.now();
+    });
+
+    it('should create a DateBuilder set to the current date', () => {
+      expect(dateBuilder.getDate().getTime()).toEqual(nowDateMock.getTime());
+    });
+
+    it('should keep in consideration hours, minutes, seconds and milliseconds', () => {
+      const date: Date = new Date(
+        nowDateMock.getFullYear(),
+        nowDateMock.getMonth(),
+        nowDateMock.getDate(),
+        1,
+        1,
+        1
+      );
+      jest.spyOn(Date, 'now').mockReturnValue(date.getTime());
+      dateBuilder = DateBuilder.now();
+      expect(dateBuilder.getDate().getTime()).not.toEqual(
+        nowDateMock.getTime()
+      );
     });
   });
 

@@ -8,6 +8,13 @@ export class DateBuilder {
   }
 
   static today(): DateBuilder {
+    const now: Date = new Date(Date.now());
+    return new DateBuilder(
+      new Date(now.getFullYear(), now.getMonth(), now.getDate())
+    );
+  }
+
+  static now(): DateBuilder {
     return new DateBuilder(new Date(Date.now()));
   }
 
