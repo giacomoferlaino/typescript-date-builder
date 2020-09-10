@@ -1,19 +1,7 @@
 import { DateHelpers } from './date-helpers';
 
 export class DateBuilder {
-  static readonly milliseconds: number = 1000;
-  static readonly seconds: number = 60;
-  static readonly minutes: number = 60;
-  static readonly hours: number = 24;
-  private readonly millisecondsInADay: number;
-
-  constructor(private date: Date) {
-    this.millisecondsInADay =
-      DateBuilder.milliseconds *
-      DateBuilder.seconds *
-      DateBuilder.minutes *
-      DateBuilder.hours;
-  }
+  constructor(private date: Date) {}
 
   getDate(): Date {
     return this.date;
@@ -29,14 +17,14 @@ export class DateBuilder {
 
   addDays(days: number): DateBuilder {
     this.checkNegativeNumber(days);
-    const daysToAdd: number = days * this.millisecondsInADay;
+    const daysToAdd: number = days * DateHelpers.millisecondsInADay;
     this.date = new Date(this.date.getTime() + daysToAdd);
     return this;
   }
 
   subtractDays(days: number): DateBuilder {
     this.checkNegativeNumber(days);
-    const daysToAdd: number = days * this.millisecondsInADay;
+    const daysToAdd: number = days * DateHelpers.millisecondsInADay;
     this.date = new Date(this.date.getTime() - daysToAdd);
     return this;
   }
