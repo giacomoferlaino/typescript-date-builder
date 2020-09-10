@@ -19,7 +19,7 @@ export class DateHelpers {
   }
 
   static equals(firstDate: Date, secondDate: Date): boolean {
-    return firstDate.getTime() == secondDate.getTime();
+    return firstDate.getTime() === secondDate.getTime();
   }
 
   static isAfter(firstDate: Date, secondDate: Date): boolean {
