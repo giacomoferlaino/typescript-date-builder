@@ -1,5 +1,5 @@
 {
-  "name": "date-time-utils",
+  "name": "@giacomoferlaino/date-time-utils",
   "version": "1.0.0",
   "description": "A simple module to make operations with Date(s) easier.",
   "main": "dist/index.js",
