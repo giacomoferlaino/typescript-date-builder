@@ -1,5 +1,5 @@
 {
-  "name": "date-builder",
+  "name": "date-utilities",
   "version": "1.0.0",
   "description": "A simple module to make operations with Date(s) easier.",
   "main": "dist/index.js",
@@ -9,6 +9,7 @@
     "build:watch": "tsc --watch",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand --watch",
     "lint": "tslint -p tsconfig.json",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "prepare": "npm run build",
@@ -18,9 +19,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/giacomoferlaino/typescript-date-builder.git"
+    "url": "git+https://github.com/giacomoferlaino/typescript-date-utilities.git"
   },
   "keywords": [
+    "date-utilities",
+    "date utilities",
     "date-builder",
     "date",
     "builder",
@@ -34,9 +37,9 @@
   "author": "Giacomo Ferlaino",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/giacomoferlaino/typescript-date-builder/issues"
+    "url": "https://github.com/giacomoferlaino/typescript-date-utilities/issues"
   },
-  "homepage": "https://github.com/giacomoferlaino/typescript-date-builder#readme",
+  "homepage": "https://github.com/giacomoferlaino/typescript-date-utilities#readme",
   "devDependencies": {
     "@types/jest": "^26.0.13",
     "jest": "^26.4.2",
