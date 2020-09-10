@@ -94,4 +94,54 @@ describe('class: DateHelpers', () => {
       ).toBe(false);
     });
   });
+
+  describe('method: daysDifference', () => {
+    it('should return an integer representing the days difference', () => {
+      expect(
+        DateHelpers.daysDifference(new Date(2000, 0, 1), new Date(1999, 0, 1))
+      ).toBe(365);
+      expect(
+        DateHelpers.daysDifference(new Date(2000, 1, 1), new Date(2000, 0, 1))
+      ).toBe(31);
+      expect(
+        DateHelpers.daysDifference(new Date(2000, 0, 2), new Date(2000, 0, 1))
+      ).toBe(1);
+      expect(
+        DateHelpers.daysDifference(new Date(1999, 0, 1), new Date(2000, 0, 1))
+      ).toBe(-365);
+      expect(
+        DateHelpers.daysDifference(new Date(2000, 0, 1), new Date(2000, 1, 1))
+      ).toBe(-31);
+      expect(
+        DateHelpers.daysDifference(new Date(2000, 0, 1), new Date(2000, 0, 2))
+      ).toBe(-1);
+    });
+
+    it('should return a rounded value in case the date also contains hours/minutes/seconds/milliseconds', () => {
+      expect(
+        DateHelpers.daysDifference(
+          new Date(2000, 0, 1),
+          new Date(1999, 0, 1, 0, 0, 0, 1)
+        )
+      ).toBe(365);
+      expect(
+        DateHelpers.daysDifference(
+          new Date(2000, 1, 1, 12, 1, 0, 0),
+          new Date(2000, 0, 1)
+        )
+      ).toBe(32);
+      expect(
+        DateHelpers.daysDifference(
+          new Date(1999, 0, 1, 0, 0, 0, 0),
+          new Date(2000, 0, 1, 0, 0, 0, 1)
+        )
+      ).toBe(-365);
+      expect(
+        DateHelpers.daysDifference(
+          new Date(2000, 0, 1, 12, 1, 0, 0),
+          new Date(2000, 1, 1)
+        )
+      ).toBe(-30);
+    });
+  });
 });

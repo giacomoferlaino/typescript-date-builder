@@ -29,4 +29,11 @@ export class DateHelpers {
   static isBefore(firstDate: Date, secondDate: Date): boolean {
     return firstDate.getTime() < secondDate.getTime();
   }
+
+  static daysDifference(firstDate: Date, secondDate: Date): number {
+    const timeDifference: number = firstDate.getTime() - secondDate.getTime();
+    const daysDifference: number =
+      timeDifference / DateHelpers.millisecondsInADay;
+    return Math.round(daysDifference);
+  }
 }
