@@ -1,5 +1,5 @@
 {
-  "name": "date-utilities",
+  "name": "date-time-utils",
   "version": "1.0.0",
   "description": "A simple module to make operations with Date(s) easier.",
   "main": "dist/index.js",
@@ -19,27 +19,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/giacomoferlaino/typescript-date-utilities.git"
+    "url": "git+https://github.com/giacomoferlaino/typescript-date-time-utils.git"
   },
   "keywords": [
+    "date-time-utils",
+    "date-time utils",
     "date-utilities",
     "date utilities",
     "date-builder",
     "date",
+    "time",
     "builder",
-    "date-manage",
-    "date",
-    "manager",
-    "date-math",
-    "date",
-    "math"
+    "date-manager",
+    "date-math"
   ],
   "author": "Giacomo Ferlaino",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/giacomoferlaino/typescript-date-utilities/issues"
+    "url": "https://github.com/giacomoferlaino/typescript-date-time-utils/issues"
   },
-  "homepage": "https://github.com/giacomoferlaino/typescript-date-utilities#readme",
+  "homepage": "https://github.com/giacomoferlaino/typescript-date-time-utils#readme",
   "devDependencies": {
     "@types/jest": "^26.0.13",
     "jest": "^26.4.2",
