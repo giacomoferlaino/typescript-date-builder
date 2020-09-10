@@ -3,7 +3,7 @@ A simple typescript library to make operations and comparisons with Date(s) easi
 ## Classes
 
 - [DateBuilder](#date-builder)
-- [DateHelpers]()
+- [DateHelpers](#date-helpers)
 
 #### <a name="date-builder"></a> DateBuilder
 
