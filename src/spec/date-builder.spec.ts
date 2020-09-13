@@ -76,6 +76,60 @@ describe('class: DateBuilder', () => {
     });
   });
 
+  describe('method: addHours', () => {
+    let hoursToAdd: number;
+    let expectedDate: Date;
+
+    it('should return a DateBuilder instance', () => {
+      hoursToAdd = 0;
+      expect(dateBuilder.addHours(hoursToAdd)).toBeInstanceOf(DateBuilder);
+    });
+
+    it('should add the given number hours to the date in use', () => {
+      hoursToAdd = 40;
+      expectedDate = new Date(2000, 0, 2, 16);
+      dateBuilder = dateBuilder.addHours(hoursToAdd);
+      expect(dateBuilder.getDate().getTime()).toEqual(expectedDate.getTime());
+    });
+
+    it('should throw a TypeError if the number of hours is negative', () => {
+      hoursToAdd = -10;
+      try {
+        dateBuilder.addHours(hoursToAdd);
+      } catch (err) {
+        expect(err).toEqual(negativeNumberError);
+      }
+    });
+  });
+
+  describe('method: subtractHours', () => {
+    let hoursToSubtract: number;
+    let expectedDate: Date;
+
+    it('should return a DateBuilder instance', () => {
+      hoursToSubtract = 0;
+      expect(dateBuilder.subtractHours(hoursToSubtract)).toBeInstanceOf(
+        DateBuilder
+      );
+    });
+
+    it('should subtract the given number hours to the date in use', () => {
+      hoursToSubtract = 40;
+      expectedDate = new Date(1999, 11, 30, 8);
+      dateBuilder = dateBuilder.subtractHours(hoursToSubtract);
+      expect(dateBuilder.getDate().getTime()).toEqual(expectedDate.getTime());
+    });
+
+    it('should throw a TypeError if the number of hours is negative', () => {
+      hoursToSubtract = -10;
+      try {
+        dateBuilder.subtractHours(hoursToSubtract);
+      } catch (err) {
+        expect(err).toEqual(negativeNumberError);
+      }
+    });
+  });
+
   describe('method: addDays', () => {
     let daysToAdd: number;
     let expectedDate: Date;
