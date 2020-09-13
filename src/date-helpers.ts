@@ -3,8 +3,9 @@ export class DateHelpers {
   static readonly seconds: number = 60;
   static readonly minutes: number = 60;
   static readonly hours: number = 24;
+  static readonly millisecondsInASecond: number = DateHelpers.milliseconds;
   static readonly millisecondsInAMinute: number =
-    DateHelpers.milliseconds * DateHelpers.seconds;
+    DateHelpers.millisecondsInASecond * DateHelpers.seconds;
   static readonly millisecondsInAnHour: number =
     DateHelpers.millisecondsInAMinute * DateHelpers.minutes;
   static readonly millisecondsInADay: number =

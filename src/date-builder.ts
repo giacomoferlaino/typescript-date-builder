@@ -22,6 +22,21 @@ export class DateBuilder {
     if (value < 0) throw new TypeError('Negative number not supported.');
   }
 
+  addSeconds(seconds: number): DateBuilder {
+    this.checkNegativeNumber(seconds);
+    const secondsToAdd: number = seconds * DateHelpers.millisecondsInASecond;
+    this.date = new Date(this.date.getTime() + secondsToAdd);
+    return this;
+  }
+
+  subtractSeconds(seconds: number): DateBuilder {
+    this.checkNegativeNumber(seconds);
+    const secondsToSubtract: number =
+      seconds * DateHelpers.millisecondsInASecond;
+    this.date = new Date(this.date.getTime() - secondsToSubtract);
+    return this;
+  }
+
   addMinutes(minutes: number): DateBuilder {
     this.checkNegativeNumber(minutes);
     const minutesToAdd: number = minutes * DateHelpers.millisecondsInAMinute;
